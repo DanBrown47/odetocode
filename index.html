@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Ethilizer</title>
+		<meta name="description" content="A realtime Ethereum transaction visualizer.">
+		<meta name="author" content="Danwand">
+		<link rel="stylesheet" type="text/css" href="jquery.nouislider.custom.css">
+		<link rel="stylesheet" type="text/css" href="engine.css">
+		<link rel="icon" type="image/png" href="/images/favicon.png">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+		<script src="https://js.pusher.com/2.2/pusher.min.js"></script>
+		<script src="bitlisten.min.js" type="text/javascript"></script>
+		<script src="https://cdn.jsdelivr.net/npm/eth-dagger/lib/eth-dagger.min.js"></script>
+
+		<!-- Structured data (remove or update this when forking BitListen) -->
+	        <script type="application/ld+json">
+	        {
+	          "@context": "http://schema.org",
+	          "@type": "WebApplication",
+
+	          "applicationCategory": "Visualization",
+	          "license": "https://opensource.org/licenses/MIT",
+	          "operatingSystem": "all",
+	          ],
+	          
+	          "offers": {
+	            "@type": "Offer",
+	            "price": "0",
+	            "priceCurrency": "USD"
+	          }
+	        }
+	        </script>
+
+		</head>
+	<body>
+		<div id="" class="serif interface">
+			<!-- <div id="rateBox">
+				<span id="rate">---</span> <span id="units">USD / BTC</span><br />
+				<span class="rateButton" id="bitstampRate" onclick="switchExchange('bitstamp');">Bitstamp</span>
+			</div> -->
+			
+			<div id="">
+				<img src="images/logo.png" style="height: 60px;" align="left" alt="EthereumListener">
+				<div style="margin-left: 80px;">
+					<h2 class="whiteFont">Ethillizer</h2>
+					<p class="whiteFont">- The Realtime Ethereum transaction visualizer</p>
+					<p class="whiteFont">- Inspired from bitlisten.com</p>
+					<br /><span id="musicianDonation"></span>
+					</span>
+				</div>
+			</div>
+		</div>
+		<table id="pageSplitter" border="0">
+			<tr><td id="chartCell">
+			<div  id="chartElement" class="contentPanel" style="position: relative;">
+			    <div id="chartHolder"></div>
+				<div class="chartMask"></div>
+				 <a class="boxclose" id="boxclose" style="text-decoration: none;" onclick='hideChart();'>&times;</a>
+			</div>
+			</td>
+			<td>
+			<div id="pageDiv" class="contentPanel">
+				<div id="bubbleDiv"></div>
+				<div id="overlay">
+					<div id="connectionStatus" class="monospace">
+						<div id="connectionInnerDiv" class="interface">
+							<!-- <p>
+								<label>
+									<input id="blockchainCheckBox" type='checkbox' checked="checked" onchange='this.checked ? TransactionSocket.init() : TransactionSocket.close();'>
+									<span id="blockchainStatus"></span></label>
+							</p> -->
+						</div>
+					</div>
+					<div id="volumeWrapper" class="interface">
+						<div id="volumeControl"></div>
+						<div id="volumeSlider" class="noUiSlider"></div>
+					</div>
+					
+				</div>
+
+			</div>
+			</td>
+			</tr>
+		</table>
+		<div id="hideInterface" class="serif" onclick='toggleInterface()'>
+					
+			| Hide Interface </div>
+		<div id="noJavascript">
+			<p>
+				Please enable Javascript, or try a different web browser.
+			</p>
+		</div>
+		<div id="noInternetExplorer" onclick>
+			<p>
+				Sorry, <span style="color: yellow;">no support for Internet Explorer.</span>
+			</p>
+			<p>
+				Try <a href="https://www.google.com/chrome/" target="_blank">Chrome</a>, <a href="http://www.getfirefox.com" target="_blank">Firefox</a> or Safari.
+			</p>
+			<br />
+			<p class="clickSuppress" style="font-size: 0.5em;">
+				<span style="cursor: pointer; text-decoration: underline;"> (Click Here to Suppress this warning.) </span>
+			</p>
+		</div>
+	</body>
+</html>
